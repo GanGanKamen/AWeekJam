@@ -5,9 +5,11 @@ using UnityEngine;
 public class MagicalSet : MonoBehaviour
 {
     public List<Date> dates;
+    private SystemCtrl system;
     // Start is called before the first frame update
     void Start()
     {
+        system = GameObject.FindGameObjectWithTag("System").GetComponent<SystemCtrl>();
         for(int i = 0; i < transform.childCount; i++)
         {
             dates.Add(transform.GetChild(i).GetComponent<Date>());
@@ -16,6 +18,7 @@ public class MagicalSet : MonoBehaviour
         {
             dates[i].canSelect = true;
         }
+        system.CardShuffle(this);
     }
 
     // Update is called once per frame
