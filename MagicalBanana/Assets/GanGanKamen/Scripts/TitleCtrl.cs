@@ -31,14 +31,14 @@ public class TitleCtrl : MonoBehaviour
     {
         if(isPrepare == true)
         {
-            back.localScale = Vector3.Lerp(back.localScale, maxScale, Time.deltaTime*4f);
+            back.localScale = Vector3.Lerp(back.localScale, maxScale, Time.deltaTime*2f);
         }
     }
 
     private IEnumerator StartGame()
     {
         isPrepare = true;
-        while(back.localScale != maxScale)
+        while(maxScale.magnitude - back.localScale.magnitude > 0.01f)
         {
             yield return null;
         }

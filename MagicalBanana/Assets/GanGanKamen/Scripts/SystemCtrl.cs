@@ -41,8 +41,8 @@ public class SystemCtrl : MonoBehaviour
     {
         gamestart = true;
         int random = Random.RandomRange(1, setNum + 1);
-        GameObject set = Instantiate(Resources.Load<GameObject>("Sets/Set" + random.ToString()), mainCanvas.transform.position, Quaternion.identity);
-        set.transform.parent = mainCanvas.transform;
-        set.transform.localPosition = Vector3.zero;
+        GameObject set = Instantiate(Resources.Load<GameObject>("Sets/Set" + random.ToString()), mainCanvas.transform);
+        //set.transform.parent = mainCanvas.transform;
+        //set.transform.localPosition = Vector3.zero;
     }
 }
