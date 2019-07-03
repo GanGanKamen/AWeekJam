@@ -17,7 +17,7 @@ public class SystemCtrl : MonoBehaviour
     [SerializeField] Text timer;
     public float score;
     [SerializeField] Text scoreText;
-    //[SerializeField] GameObject resultCanvas;
+    [SerializeField] GameObject result;
     // Start is called before the first frame update
     void Start()
     {
@@ -41,6 +41,7 @@ public class SystemCtrl : MonoBehaviour
         {
             gamestart = false;
             canCtrl = false;
+            Destroy(GameObject.FindGameObjectWithTag("Set"));
             Invoke("GameOver", 2f);
         }
     }
@@ -64,7 +65,8 @@ public class SystemCtrl : MonoBehaviour
 
     private void GameOver()
     {
-        //resultCanvas.SetActive(true);
+        result.SetActive(true);
+        result.GetComponent<ResultCtrl>().ScoreDisplay(score);
         nowTime = 30f;
     }
 

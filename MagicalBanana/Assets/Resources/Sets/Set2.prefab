@@ -170,7 +170,7 @@ GameObject:
   - component: {fileID: 6364624412357368998}
   m_Layer: 0
   m_Name: Set2
-  m_TagString: Untagged
+  m_TagString: Set
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -248,7 +248,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -473, y: -91}
-  m_SizeDelta: {x: 300, y: 150}
+  m_SizeDelta: {x: 250, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6364624412486710495
 CanvasRenderer:
@@ -278,8 +278,8 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 92c8b2038ca157e4bb2ad2248fba1f6a, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -355,11 +355,13 @@ MonoBehaviour:
   name: "\u30D1\u30F3\u30C0"
   canSelect: 0
   isSelected: 0
+  isCollecting: 0
   nextdates:
   - {fileID: 6364624412654695134}
   - {fileID: 6364624413241074716}
   selectedMark: {fileID: 6364624413482603431}
   nameText: {fileID: 6364624412685901748}
+  image: {fileID: 0}
 --- !u!1 &6364624412611462793
 GameObject:
   m_ObjectHideFlags: 0
@@ -478,7 +480,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 32.561462, y: 1.7855835}
-  m_SizeDelta: {x: 300, y: 150}
+  m_SizeDelta: {x: 250, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6364624412654695135
 CanvasRenderer:
@@ -508,8 +510,8 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 92c8b2038ca157e4bb2ad2248fba1f6a, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -585,12 +587,14 @@ MonoBehaviour:
   name: "\u30E9\u30FC\u30E1\u30F3"
   canSelect: 0
   isSelected: 0
+  isCollecting: 0
   nextdates:
   - {fileID: 6364624413212366190}
   - {fileID: 6364624414295018500}
   - {fileID: 6364624412486710490}
   selectedMark: {fileID: 6364624413751022641}
   nameText: {fileID: 6364624412254885107}
+  image: {fileID: 0}
 --- !u!1 &6364624412685901749
 GameObject:
   m_ObjectHideFlags: 0
@@ -941,7 +945,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -711, y: 400}
-  m_SizeDelta: {x: 300, y: 150}
+  m_SizeDelta: {x: 250, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6364624413212366191
 CanvasRenderer:
@@ -971,8 +975,8 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 92c8b2038ca157e4bb2ad2248fba1f6a, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -1048,10 +1052,12 @@ MonoBehaviour:
   name: "\u3082\u3084\u3057"
   canSelect: 0
   isSelected: 0
+  isCollecting: 0
   nextdates:
   - {fileID: 6364624412654695134}
   selectedMark: {fileID: 6364624413370041715}
   nameText: {fileID: 6364624413703517147}
+  image: {fileID: 0}
 --- !u!1 &6364624413241074714
 GameObject:
   m_ObjectHideFlags: 0
@@ -1091,7 +1097,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -139, y: 358}
-  m_SizeDelta: {x: 300, y: 150}
+  m_SizeDelta: {x: 250, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6364624413241074705
 CanvasRenderer:
@@ -1121,8 +1127,8 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 92c8b2038ca157e4bb2ad2248fba1f6a, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -1198,11 +1204,13 @@ MonoBehaviour:
   name: "\u718A"
   canSelect: 0
   isSelected: 0
+  isCollecting: 0
   nextdates:
   - {fileID: 6364624413811988603}
   - {fileID: 6364624412486710490}
   selectedMark: {fileID: 6364624413706755120}
   nameText: {fileID: 6364624413162789785}
+  image: {fileID: 0}
 --- !u!1 &6364624413370041715
 GameObject:
   m_ObjectHideFlags: 0
@@ -1691,7 +1699,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 552, y: 134}
-  m_SizeDelta: {x: 300, y: 150}
+  m_SizeDelta: {x: 250, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6364624413811988604
 CanvasRenderer:
@@ -1721,8 +1729,8 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 92c8b2038ca157e4bb2ad2248fba1f6a, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -1798,10 +1806,12 @@ MonoBehaviour:
   name: "\u30AD\u30E3\u30E9\u30E1\u30EB"
   canSelect: 0
   isSelected: 0
+  isCollecting: 0
   nextdates:
   - {fileID: 6364624413241074716}
   selectedMark: {fileID: 6364624413649697685}
   nameText: {fileID: 6364624412194403640}
+  image: {fileID: 0}
 --- !u!1 &6364624414048482560
 GameObject:
   m_ObjectHideFlags: 0
@@ -1915,7 +1925,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -321, y: -389}
-  m_SizeDelta: {x: 300, y: 150}
+  m_SizeDelta: {x: 250, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6364624414186876606
 CanvasRenderer:
@@ -1945,8 +1955,8 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 92c8b2038ca157e4bb2ad2248fba1f6a, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -2022,11 +2032,13 @@ MonoBehaviour:
   name: "\u65E5\u672C"
   canSelect: 0
   isSelected: 0
+  isCollecting: 0
   nextdates:
   - {fileID: 6364624412654695134}
   - {fileID: 6364624414295018500}
   selectedMark: {fileID: 6364624414048482560}
   nameText: {fileID: 6364624412611462792}
+  image: {fileID: 0}
 --- !u!1 &6364624414295018498
 GameObject:
   m_ObjectHideFlags: 0
@@ -2066,7 +2078,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 598, y: -245}
-  m_SizeDelta: {x: 300, y: 150}
+  m_SizeDelta: {x: 250, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6364624414295018521
 CanvasRenderer:
@@ -2096,8 +2108,8 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 92c8b2038ca157e4bb2ad2248fba1f6a, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -2173,8 +2185,10 @@ MonoBehaviour:
   name: "\u5BFF\u53F8"
   canSelect: 0
   isSelected: 0
+  isCollecting: 0
   nextdates:
   - {fileID: 6364624412654695134}
   - {fileID: 6364624414186876605}
   selectedMark: {fileID: 6364624413110905738}
   nameText: {fileID: 6364624412986090304}
+  image: {fileID: 0}

@@ -14,6 +14,7 @@ public class Date : MonoBehaviour
     private Vector3 collectionPoint;
     [SerializeField] private GameObject selectedMark;
     [SerializeField] private Text nameText;
+    [SerializeField] private Image image;
     // Start is called before the first frame update
     private void Awake()
     {
@@ -23,7 +24,11 @@ public class Date : MonoBehaviour
 
     void Start()
     {
-        nameText.text = name;
+        if(nameText != null)
+        {
+            nameText.text = name;
+        }
+        
     }
 
     // Update is called once per frame
@@ -41,10 +46,18 @@ public class Date : MonoBehaviour
         if(canSelect == true)
         {
             button.interactable = true;
+            if(image != null)
+            {
+                image.color = new Color(255, 255, 255, 1f);
+            }
         }
         else
         {
             button.interactable = false;
+            if (image != null)
+            {
+                image.color = new Color(255, 255, 255, 0.5f);
+            }
         }
         if(isSelected == true)
         {
