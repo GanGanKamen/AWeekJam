@@ -6,9 +6,11 @@ public class MagicalSet : MonoBehaviour
 {
     public List<Date> dates;
     private SystemCtrl system;
+    public int combo;
     // Start is called before the first frame update
     void Start()
     {
+        combo = 0;
         system = GameObject.FindGameObjectWithTag("System").GetComponent<SystemCtrl>();
         for(int i = 0; i < transform.childCount; i++)
         {
@@ -46,6 +48,8 @@ public class MagicalSet : MonoBehaviour
             }
             
         }
+        combo += 1;
+        SoundManager.PlaySEOneTime(GetComponent<AudioSource>(), Resources.Load<AudioClip>("SE/SE_select0" + combo.ToString()));
     }
 
     private void NextCheck()
@@ -80,5 +84,6 @@ public class MagicalSet : MonoBehaviour
         system.score += score + Random.RandomRange(0, 0.99f);
         system.NextSet();
         Destroy(gameObject);
+        yield break;
     }
 }

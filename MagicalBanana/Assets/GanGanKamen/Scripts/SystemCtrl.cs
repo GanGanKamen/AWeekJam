@@ -59,19 +59,24 @@ public class SystemCtrl : MonoBehaviour
         randomPos = randomPos.OrderBy(i => System.Guid.NewGuid()).ToList();
         for(int i = 0; i < magicalSet.dates.Count; i++)
         {
-           magicalSet.dates[i].GetComponent<RectTransform>().localPosition = randomPos[i];
+            var randomX = Random.RandomRange(-20f, 20f);
+            var randomY = Random.RandomRange(-50f, 50f);
+           magicalSet.dates[i].GetComponent<RectTransform>().localPosition = randomPos[i] 
+                + new Vector3(randomX,randomY,0);
         }
     }
 
     private void GameOver()
     {
+        GetComponent<AudioSource>().Stop();
         result.SetActive(true);
         result.GetComponent<ResultCtrl>().ScoreDisplay(score);
-        nowTime = 30f;
+        nowTime = timeLimit;
     }
 
     public void GameStart()
     {
+        SoundManager.PlayBGM(gameObject.GetComponent<AudioSource>());
         canCtrl = true;
         gamestart = true;
         int random = Random.RandomRange(1, setNum + 1);

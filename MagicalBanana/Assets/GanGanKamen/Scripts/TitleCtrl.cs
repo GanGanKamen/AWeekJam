@@ -12,7 +12,6 @@ public class TitleCtrl : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        maxScale = new Vector3(2, 2, 0);
         system = GameObject.FindGameObjectWithTag("System").GetComponent<SystemCtrl>();
     }
 

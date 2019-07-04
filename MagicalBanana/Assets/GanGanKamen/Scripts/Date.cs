@@ -12,6 +12,7 @@ public class Date : MonoBehaviour
     public List<Date> nextdates;
     private Button button;
     private Vector3 collectionPoint;
+    private RectTransform rectTransform;
     [SerializeField] private GameObject selectedMark;
     [SerializeField] private Text nameText;
     [SerializeField] private Image image;
@@ -19,7 +20,7 @@ public class Date : MonoBehaviour
     private void Awake()
     {
         button = GetComponent<Button>();
-        collectionPoint = new Vector3(0, -500, 0);
+        collectionPoint = new Vector3(-860, -250, 0);
     }
 
     void Start()
@@ -28,7 +29,7 @@ public class Date : MonoBehaviour
         {
             nameText.text = name;
         }
-        
+        rectTransform = GetComponent<RectTransform>();
     }
 
     // Update is called once per frame
@@ -37,7 +38,8 @@ public class Date : MonoBehaviour
         ButtonStatus();
         if(isCollecting == true)
         {
-            GetComponent<RectTransform>().localPosition = Vector3.Lerp(GetComponent<RectTransform>().localPosition, collectionPoint, Time.deltaTime * 4f);
+            rectTransform.localPosition = Vector3.Lerp(rectTransform.localPosition, collectionPoint, Time.deltaTime * 4f);
+            rectTransform.localScale = Vector3.Lerp(rectTransform.localScale, new Vector3(0.2f,0.2f, 0), Time.deltaTime * 4f);
         }
     }
 
