@@ -72,6 +72,7 @@ public class SystemCtrl : MonoBehaviour
         result.SetActive(true);
         result.GetComponent<ResultCtrl>().ScoreDisplay(score);
         nowTime = timeLimit;
+        //Destroy(GameObject.FindGameObjectWithTag("Set"));
     }
 
     public void GameStart()
