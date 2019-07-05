@@ -10,7 +10,8 @@ public class ResultCtrl : MonoBehaviour
     [SerializeField] private int totalTime;
     [SerializeField] private Text scoreText;
     [SerializeField] private Text timeText;
-    [SerializeField] private GameObject retryButton;
+    [SerializeField] private GameObject[] buttons;
+    [SerializeField] private GameObject title;
     private SystemCtrl system;
     private float progressTime;
     private bool countUp;
@@ -26,7 +27,7 @@ public class ResultCtrl : MonoBehaviour
     void Update()
     {
         CountUp();
-        timeText.text = "リトライまで後　" + (totalTime - (int)progressTime).ToString() + "　秒";
+        timeText.text = "リトライまで後 " + (totalTime - (int)progressTime).ToString() + " 秒";
     }
 
     public void ScoreDisplay(float score)
@@ -38,6 +39,11 @@ public class ResultCtrl : MonoBehaviour
     {
 
         StartCoroutine(StartReboot());
+    }
+
+    public void Back()
+    {
+
     }
 
     private void CountUp()
@@ -52,7 +58,10 @@ public class ResultCtrl : MonoBehaviour
     private IEnumerator StartReboot()
     {
         reboot.SetActive(true);
-        retryButton.SetActive(false);
+        for(int i = 0;i < buttons.Length; i++)
+        {
+            buttons[i].SetActive(false);
+        }
         scoreText.gameObject.SetActive(false);
         system.score = 0;
         countUp = true;
@@ -69,7 +78,10 @@ public class ResultCtrl : MonoBehaviour
     private void Initialize()
     {
         scoreText.gameObject.SetActive(true);
-        retryButton.SetActive(true);
+        for (int i = 0; i < buttons.Length; i++)
+        {
+            buttons[i].SetActive(true);
+        }
         reboot.SetActive(false);
         progressTime = 0;
         countUp = false;

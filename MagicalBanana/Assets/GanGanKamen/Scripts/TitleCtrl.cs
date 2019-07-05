@@ -41,8 +41,13 @@ public class TitleCtrl : MonoBehaviour
         {
             yield return null;
         }
-        system.GameStart();
+        system.GameStartFromTitle();
         gameObject.SetActive(false);
         yield break;
+    }
+
+    public void BackToTitle()
+    {
+
     }
 }

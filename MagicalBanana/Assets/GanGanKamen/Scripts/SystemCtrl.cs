@@ -18,6 +18,12 @@ public class SystemCtrl : MonoBehaviour
     public float score;
     [SerializeField] Text scoreText;
     [SerializeField] GameObject result;
+    [SerializeField] GameObject acessLoad;
+    [SerializeField] private int totalTime;
+    private float progressTime;
+    private bool countUp;
+    [SerializeField] private Slider acessSlider;
+    [SerializeField] private Text acessText;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,6 +35,8 @@ public class SystemCtrl : MonoBehaviour
         {
             randomPosSave[i] = randomPos[i];
         }
+        progressTime = 0;
+        acessSlider.maxValue = totalTime;
     }
 
     // Update is called once per frame
@@ -37,6 +45,7 @@ public class SystemCtrl : MonoBehaviour
         timer.text = ((int)nowTime).ToString();
         scoreText.text = score.ToString("f2") + " GB";
         CountDown();
+        CountUp();
         if((int)nowTime == 0&&gamestart == true)
         {
             gamestart = false;
@@ -52,6 +61,16 @@ public class SystemCtrl : MonoBehaviour
         {
             nowTime -= Time.deltaTime;
         }
+    }
+
+    private void CountUp()
+    {
+        if(countUp == true)
+        {
+            progressTime += Time.deltaTime;
+        }
+        acessSlider.value = progressTime;
+        acessText.text = "データベースへのアクセスが完了まで後" + (totalTime - (int)progressTime).ToString() + "秒";
     }
 
     public void CardShuffle(MagicalSet magicalSet)
@@ -73,6 +92,28 @@ public class SystemCtrl : MonoBehaviour
         result.GetComponent<ResultCtrl>().ScoreDisplay(score);
         nowTime = timeLimit;
         //Destroy(GameObject.FindGameObjectWithTag("Set"));
+    }
+
+    public void GameStartFromTitle()
+    {
+        StartCoroutine(FromTitleToMain());
+    } 
+
+    private IEnumerator FromTitleToMain()
+    {
+        acessLoad.SetActive(true);
+        countUp = true;
+        timer.gameObject.SetActive(false);
+        while(acessSlider.value < acessSlider.maxValue)
+        {
+            yield return null;
+        }
+        acessLoad.SetActive(false);
+        countUp = false;
+        progressTime = 0;
+        timer.gameObject.SetActive(true);
+        GameStart();
+        yield break;
     }
 
     public void GameStart()
