@@ -80,6 +80,7 @@ public class MagicalSet : MonoBehaviour
                 score += 1;
             }
         }
+        score = score * combo;
         yield return new WaitForSeconds(1f);
         system.score += score + Random.RandomRange(0, 0.99f);
         system.NextSet();

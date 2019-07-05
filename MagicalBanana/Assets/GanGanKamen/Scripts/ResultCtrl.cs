@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class ResultCtrl : MonoBehaviour
 {
+    [SerializeField] private GameObject reboot;
+    [SerializeField] private Slider rebootSlider;
     [SerializeField] private Text scoreText;
      private SystemCtrl system;
     // Start is called before the first frame update
