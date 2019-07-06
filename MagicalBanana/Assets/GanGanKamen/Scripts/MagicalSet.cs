@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class MagicalSet : MonoBehaviour
 {
+    public int id;
     public List<Date> dates;
     private SystemCtrl system;
     public int combo;
@@ -26,7 +27,7 @@ public class MagicalSet : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        NextCheck();
+        
     }
 
     public void DateSelected(Date thisDate)
@@ -50,6 +51,7 @@ public class MagicalSet : MonoBehaviour
         }
         combo += 1;
         SoundManager.PlaySEOneTime(GetComponent<AudioSource>(), Resources.Load<AudioClip>("SE/SE_select0" + combo.ToString()));
+        NextCheck();
     }
 
     private void NextCheck()
@@ -83,7 +85,7 @@ public class MagicalSet : MonoBehaviour
         score = score * combo;
         yield return new WaitForSeconds(1f);
         system.score += score + Random.RandomRange(0, 0.99f);
-        system.NextSet();
+        system.NextSet(id);
         Destroy(gameObject);
         yield break;
     }

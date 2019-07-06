@@ -87,6 +87,10 @@ public class SystemCtrl : MonoBehaviour
 
     private void GameOver()
     {
+        if (GameObject.FindGameObjectWithTag("Set") != null)
+        {
+            Destroy(GameObject.FindGameObjectWithTag("Set"));
+        }
         GetComponent<AudioSource>().Stop();
         result.SetActive(true);
         result.GetComponent<ResultCtrl>().ScoreDisplay(score);
@@ -125,10 +129,19 @@ public class SystemCtrl : MonoBehaviour
         GameObject set = Instantiate(Resources.Load<GameObject>("Sets/Set" + random.ToString()), mainCanvas.transform);
     }
 
-    public void NextSet()
+    public void NextSet(int preID)
     {
+        if(gamestart == false)
+        {
+            return;
+        }
         canCtrl = true;
-        int random = Random.RandomRange(1, setNum + 1);
+        int random = preID;
+        do
+        {
+            random = Random.RandomRange(1, setNum + 1);
+        }
+        while (random == preID);
         GameObject set = Instantiate(Resources.Load<GameObject>("Sets/Set" + random.ToString()), mainCanvas.transform);
     }
 }
