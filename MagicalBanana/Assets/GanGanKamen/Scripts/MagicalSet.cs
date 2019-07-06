@@ -70,7 +70,7 @@ public class MagicalSet : MonoBehaviour
         }
     }
 
-    private IEnumerator DataCollect()
+    public IEnumerator DataCollect()
     {
         system.canCtrl = false;
         int score = 0;
@@ -82,10 +82,19 @@ public class MagicalSet : MonoBehaviour
                 score += 1;
             }
         }
+        if(score != 0)
+        {
+            SoundManager.PlaySEOneTime(GetComponent<AudioSource>(), Resources.Load<AudioClip>("SE/SE_colect_" + combo.ToString()));
+        }
+
         score = score * combo;
         yield return new WaitForSeconds(1f);
         system.score += score + Random.RandomRange(0, 0.99f);
-        system.NextSet(id);
+        if(system.gamestart == true)
+        {
+            system.NextSet(id);
+        }
+        
         Destroy(gameObject);
         yield break;
     }

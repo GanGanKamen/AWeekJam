@@ -25,6 +25,7 @@ public class SystemCtrl : MonoBehaviour
     [SerializeField] private Slider acessSlider;
     [SerializeField] private Text acessText;
     public AudioSource title, play;
+    [SerializeField] private AudioSource se_count;
     // Start is called before the first frame update
     void Start()
     {
@@ -53,7 +54,7 @@ public class SystemCtrl : MonoBehaviour
         {
             gamestart = false;
             canCtrl = false;
-            Destroy(GameObject.FindGameObjectWithTag("Set"));
+            StartCoroutine(GameObject.FindGameObjectWithTag("Set").GetComponent<MagicalSet>().DataCollect());
             SoundManager.SwitchBGM(play, title, 2f);
             Invoke("GameOver", 2f);
         }
@@ -65,6 +66,7 @@ public class SystemCtrl : MonoBehaviour
         {
             nowTime -= Time.deltaTime;
         }
+        
     }
 
     private void CountUp()
@@ -112,6 +114,7 @@ public class SystemCtrl : MonoBehaviour
         countUp = true;
         timer.gameObject.SetActive(false);
         SoundManager.SwitchBGM(title, play, totalTime);
+        se_count.Play();
         while (acessSlider.value < acessSlider.maxValue)
         {
             yield return null;
@@ -120,7 +123,7 @@ public class SystemCtrl : MonoBehaviour
         countUp = false;
         progressTime = 0;
         timer.gameObject.SetActive(true);
-        
+        se_count.Stop();
         GameStart();
         yield break;
     }

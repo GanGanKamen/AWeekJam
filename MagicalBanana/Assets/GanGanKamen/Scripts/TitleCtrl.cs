@@ -11,6 +11,7 @@ public class TitleCtrl : MonoBehaviour
     [SerializeField] private GameObject accessButton;
     [SerializeField] private RectTransform back;
     [SerializeField] private Vector3 maxScale;
+    [SerializeField] private AudioSource se_start, se_titleBack;
     // Start is called before the first frame update
     void Start()
     {
@@ -43,6 +44,7 @@ public class TitleCtrl : MonoBehaviour
     private IEnumerator StartGame()
     {
         isPrepare = true;
+        se_start.Play();
         while(maxScale.magnitude - back.localScale.magnitude > 0.01f)
         {
             yield return null;
@@ -60,6 +62,7 @@ public class TitleCtrl : MonoBehaviour
 
     private IEnumerator FromResultToTitle()
     {
+        se_titleBack.Play();
         back.localScale = maxScale;
         accessButton.SetActive(false);
         isBacking = true;
