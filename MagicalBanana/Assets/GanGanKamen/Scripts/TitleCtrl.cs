@@ -8,20 +8,26 @@ public class TitleCtrl : MonoBehaviour
     private SystemCtrl system;
     private bool isPrepare;
     private bool isBacking;
+    private bool isClearing;
+    private float alpha;
     [SerializeField] private GameObject accessButton;
     [SerializeField] private RectTransform back;
     [SerializeField] private Vector3 maxScale;
     [SerializeField] private AudioSource se_start, se_titleBack;
+    [SerializeField] private RawImage[] backImages;
     // Start is called before the first frame update
     void Start()
     {
         system = GameObject.FindGameObjectWithTag("System").GetComponent<SystemCtrl>();
+        alpha = 1;
+        isClearing = false;
     }
 
     // Update is called once per frame
     void Update()
     {
         Approach();
+        Clear();
     }
 
     public void GameStart()
@@ -39,6 +45,19 @@ public class TitleCtrl : MonoBehaviour
         {
             back.localScale = Vector3.Lerp(back.localScale, Vector3.one, Time.deltaTime * 2f);
         }
+        
+    }
+
+    private void Clear()
+    {
+        for (int i = 0; i < backImages.Length; i++)
+        {
+            backImages[i].color = new Color(255, 255, 255, alpha);
+        }
+        if (isClearing == true)
+        {
+            alpha -= Time.deltaTime;
+        }
     }
 
     private IEnumerator StartGame()
@@ -49,6 +68,13 @@ public class TitleCtrl : MonoBehaviour
         {
             yield return null;
         }
+        isClearing = true;
+        while (alpha > 0)
+        {
+            yield return null;
+        }
+        isClearing = false;
+        alpha = 1;
         system.GameStartFromTitle();
         isPrepare = false;
         gameObject.SetActive(false);
