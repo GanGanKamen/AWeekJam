@@ -8,6 +8,7 @@ public class MagicalSet : MonoBehaviour
     public List<Date> dates;
     private SystemCtrl system;
     public int combo;
+    [SerializeField] private AudioSource SE_collect0;
     // Start is called before the first frame update
     void Start()
     {
@@ -85,6 +86,7 @@ public class MagicalSet : MonoBehaviour
         if(score != 0)
         {
             SoundManager.PlaySEOneTime(GetComponent<AudioSource>(), Resources.Load<AudioClip>("SE/SE_colect_" + combo.ToString()));
+            SE_collect0.Play();
         }
 
         score = score * combo;

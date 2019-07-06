@@ -10,6 +10,7 @@ public class TitleCtrl : MonoBehaviour
     private bool isBacking;
     private bool isClearing;
     private float alpha;
+    [SerializeField] private GameObject titleLogo;
     [SerializeField] private GameObject accessButton;
     [SerializeField] private RectTransform back;
     [SerializeField] private Vector3 maxScale;
@@ -91,12 +92,14 @@ public class TitleCtrl : MonoBehaviour
         se_titleBack.Play();
         back.localScale = maxScale;
         accessButton.SetActive(false);
+        titleLogo.SetActive(false);
         isBacking = true;
         while(back.localScale != Vector3.one)
         {
             yield return null;
         }
         accessButton.SetActive(true);
+        titleLogo.SetActive(true);
         isBacking = false;
         yield break;
     }
