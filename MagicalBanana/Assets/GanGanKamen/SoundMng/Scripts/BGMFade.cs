@@ -37,10 +37,11 @@ public class BGMFade : MonoBehaviour
             preBGM.Stop();
             if (introBGM != null)
             {
-                SoundManager.IntroLoopPlay(introBGM, nextBGM);
+                SoundManager.IntroLoopPlay(introBGM, nextBGM,optionVolume);
             }
             else
             {
+                nextBGM.volume = optionVolume;
                 nextBGM.Play();
             }
             Destroy(gameObject);

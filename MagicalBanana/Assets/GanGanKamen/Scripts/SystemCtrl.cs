@@ -24,9 +24,11 @@ public class SystemCtrl : MonoBehaviour
     private bool countUp;
     [SerializeField] private Slider acessSlider;
     [SerializeField] private Text acessText;
+    public AudioSource title, play;
     // Start is called before the first frame update
     void Start()
     {
+        SoundManager.PlayBGM(title);
         canCtrl = false;
         nowTime = timeLimit;
         gamestart = false;
@@ -37,6 +39,7 @@ public class SystemCtrl : MonoBehaviour
         }
         progressTime = 0;
         acessSlider.maxValue = totalTime;
+        
     }
 
     // Update is called once per frame
@@ -51,6 +54,7 @@ public class SystemCtrl : MonoBehaviour
             gamestart = false;
             canCtrl = false;
             Destroy(GameObject.FindGameObjectWithTag("Set"));
+            SoundManager.SwitchBGM(play, title, 2f);
             Invoke("GameOver", 2f);
         }
     }
@@ -91,7 +95,6 @@ public class SystemCtrl : MonoBehaviour
         {
             Destroy(GameObject.FindGameObjectWithTag("Set"));
         }
-        GetComponent<AudioSource>().Stop();
         result.SetActive(true);
         result.GetComponent<ResultCtrl>().ScoreDisplay(score);
         nowTime = timeLimit;
@@ -108,7 +111,8 @@ public class SystemCtrl : MonoBehaviour
         acessLoad.SetActive(true);
         countUp = true;
         timer.gameObject.SetActive(false);
-        while(acessSlider.value < acessSlider.maxValue)
+        SoundManager.SwitchBGM(title, play, totalTime);
+        while (acessSlider.value < acessSlider.maxValue)
         {
             yield return null;
         }
@@ -116,13 +120,13 @@ public class SystemCtrl : MonoBehaviour
         countUp = false;
         progressTime = 0;
         timer.gameObject.SetActive(true);
+        
         GameStart();
         yield break;
     }
 
     public void GameStart()
     {
-        SoundManager.PlayBGM(gameObject.GetComponent<AudioSource>());
         canCtrl = true;
         gamestart = true;
         int random = Random.RandomRange(1, setNum + 1);

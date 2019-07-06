@@ -7,6 +7,8 @@ public class TitleCtrl : MonoBehaviour
 {
     private SystemCtrl system;
     private bool isPrepare;
+    private bool isBacking;
+    [SerializeField] private GameObject accessButton;
     [SerializeField] private RectTransform back;
     [SerializeField] private Vector3 maxScale;
     // Start is called before the first frame update
@@ -32,6 +34,10 @@ public class TitleCtrl : MonoBehaviour
         {
             back.localScale = Vector3.Lerp(back.localScale, maxScale, Time.deltaTime*2f);
         }
+        else if(isBacking == true)
+        {
+            back.localScale = Vector3.Lerp(back.localScale, Vector3.one, Time.deltaTime * 2f);
+        }
     }
 
     private IEnumerator StartGame()
@@ -42,12 +48,27 @@ public class TitleCtrl : MonoBehaviour
             yield return null;
         }
         system.GameStartFromTitle();
+        isPrepare = false;
         gameObject.SetActive(false);
         yield break;
     }
 
     public void BackToTitle()
     {
+        StartCoroutine(FromResultToTitle());
+    }
 
+    private IEnumerator FromResultToTitle()
+    {
+        back.localScale = maxScale;
+        accessButton.SetActive(false);
+        isBacking = true;
+        while(back.localScale != Vector3.one)
+        {
+            yield return null;
+        }
+        accessButton.SetActive(true);
+        isBacking = false;
+        yield break;
     }
 }

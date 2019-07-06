@@ -13,6 +13,14 @@ public class SoundManager : MonoBehaviour
         loopSource.PlayScheduled(AudioSettings.dspTime - 0.1f + introSource.clip.length);        
     }
 
+    public static void IntroLoopPlay(AudioSource introSource, AudioSource loopSource,float OptionVolume) //ゲームオプションの音量調節
+    {
+        introSource.loop = false;
+        introSource.Play();
+        loopSource.loop = true;
+        loopSource.PlayScheduled(AudioSettings.dspTime - 0.1f + introSource.clip.length);
+    }
+
     public static void SwitchBGM(AudioSource preBGM, AudioSource newBgm, float time) //現在再生中のBGMをフェードアウトで新しいBGMに切り替える
     {
         GameObject fadeObj = new GameObject();

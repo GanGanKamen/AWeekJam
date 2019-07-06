@@ -285,7 +285,7 @@ PrefabInstance:
     - target: {fileID: 5495704017123879419, guid: 1be0ccc68381c7541a750e58b2357cdf,
         type: 3}
       propertyPath: nextdates.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5495704017123879419, guid: 1be0ccc68381c7541a750e58b2357cdf,
         type: 3}
@@ -306,14 +306,7 @@ PrefabInstance:
         type: 3}
       propertyPath: nextdates.Array.data[2]
       value: 
-      objectReference: {fileID: 6963040631884287407, guid: 94d671fc543823842be1626265478558,
-        type: 3}
-    - target: {fileID: 5495704017123879419, guid: 1be0ccc68381c7541a750e58b2357cdf,
-        type: 3}
-      propertyPath: nextdates.Array.data[3]
-      value: 
-      objectReference: {fileID: 6963040632303104827, guid: 94d671fc543823842be1626265478558,
-        type: 3}
+      objectReference: {fileID: 5682168031909170539}
     - target: {fileID: 5495704017123879419, guid: 1be0ccc68381c7541a750e58b2357cdf,
         type: 3}
       propertyPath: selectedMark
@@ -329,11 +322,6 @@ PrefabInstance:
       propertyPath: image
       value: 
       objectReference: {fileID: 1684053393623731363}
-    - target: {fileID: 5495704017123879419, guid: 1be0ccc68381c7541a750e58b2357cdf,
-        type: 3}
-      propertyPath: canSelect
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1567606386685724670, guid: 1be0ccc68381c7541a750e58b2357cdf,
         type: 3}
       propertyPath: m_Sprite
@@ -1004,11 +992,6 @@ PrefabInstance:
       objectReference: {fileID: 5682168031422958459}
     - target: {fileID: 5495704017123879419, guid: 1be0ccc68381c7541a750e58b2357cdf,
         type: 3}
-      propertyPath: nextdates.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 5495704017123879419, guid: 1be0ccc68381c7541a750e58b2357cdf,
-        type: 3}
       propertyPath: name
       value: JK
       objectReference: {fileID: 0}
@@ -1016,7 +999,7 @@ PrefabInstance:
         type: 3}
       propertyPath: nextdates.Array.data[0]
       value: 
-      objectReference: {fileID: 5682168032443275303}
+      objectReference: {fileID: 5682168031856927398}
     - target: {fileID: 5495704017123879419, guid: 1be0ccc68381c7541a750e58b2357cdf,
         type: 3}
       propertyPath: nextdates.Array.data[1]
@@ -1037,16 +1020,6 @@ PrefabInstance:
       propertyPath: image
       value: 
       objectReference: {fileID: 1684053394238055806}
-    - target: {fileID: 5495704017123879419, guid: 1be0ccc68381c7541a750e58b2357cdf,
-        type: 3}
-      propertyPath: nextdates.Array.data[2]
-      value: 
-      objectReference: {fileID: 5682168031856927398}
-    - target: {fileID: 5495704017123879419, guid: 1be0ccc68381c7541a750e58b2357cdf,
-        type: 3}
-      propertyPath: nextdates.Array.data[3]
-      value: 
-      objectReference: {fileID: 5682168032336239551}
     - target: {fileID: 1567606386685724670, guid: 1be0ccc68381c7541a750e58b2357cdf,
         type: 3}
       propertyPath: m_Sprite
@@ -1478,12 +1451,12 @@ PrefabInstance:
     - target: {fileID: 5495704017123879419, guid: 1be0ccc68381c7541a750e58b2357cdf,
         type: 3}
       propertyPath: nextdates.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5495704017123879419, guid: 1be0ccc68381c7541a750e58b2357cdf,
         type: 3}
       propertyPath: name
-      value: "\u5927\u5B66\u53D7\u9A13"
+      value: "\u5927\u5B66"
       objectReference: {fileID: 0}
     - target: {fileID: 5495704017123879419, guid: 1be0ccc68381c7541a750e58b2357cdf,
         type: 3}
@@ -1505,11 +1478,6 @@ PrefabInstance:
       propertyPath: image
       value: 
       objectReference: {fileID: 1684053395248182818}
-    - target: {fileID: 5495704017123879419, guid: 1be0ccc68381c7541a750e58b2357cdf,
-        type: 3}
-      propertyPath: nextdates.Array.data[1]
-      value: 
-      objectReference: {fileID: 5682168031422958459}
     - target: {fileID: 1567606386685724670, guid: 1be0ccc68381c7541a750e58b2357cdf,
         type: 3}
       propertyPath: m_Sprite
@@ -1712,6 +1680,11 @@ PrefabInstance:
       objectReference: {fileID: 8305080195956710444}
     - target: {fileID: 5495704017123879419, guid: 1be0ccc68381c7541a750e58b2357cdf,
         type: 3}
+      propertyPath: nextdates.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5495704017123879419, guid: 1be0ccc68381c7541a750e58b2357cdf,
+        type: 3}
       propertyPath: name
       value: "\u30B9\u30C6\u30FC\u30AD"
       objectReference: {fileID: 0}
@@ -1720,11 +1693,6 @@ PrefabInstance:
       propertyPath: nextdates.Array.data[0]
       value: 
       objectReference: {fileID: 5682168031256278015}
-    - target: {fileID: 5495704017123879419, guid: 1be0ccc68381c7541a750e58b2357cdf,
-        type: 3}
-      propertyPath: nextdates.Array.data[1]
-      value: 
-      objectReference: {fileID: 5682168031856927398}
     - target: {fileID: 5495704017123879419, guid: 1be0ccc68381c7541a750e58b2357cdf,
         type: 3}
       propertyPath: selectedMark
@@ -1744,7 +1712,8 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 21300000, guid: dcaf874bb09663042a9971a25435a65f,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1be0ccc68381c7541a750e58b2357cdf, type: 3}
 --- !u!224 &4967633984699256961 stripped

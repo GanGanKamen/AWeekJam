@@ -43,7 +43,9 @@ public class ResultCtrl : MonoBehaviour
 
     public void Back()
     {
-
+        title.SetActive(true);
+        title.GetComponent<TitleCtrl>().BackToTitle();
+        gameObject.SetActive(false);
     }
 
     private void CountUp()
@@ -65,6 +67,7 @@ public class ResultCtrl : MonoBehaviour
         scoreText.gameObject.SetActive(false);
         system.score = 0;
         countUp = true;
+        SoundManager.SwitchBGM(system.title, system.play,totalTime);
         while(rebootSlider.value < rebootSlider.maxValue)
         {
             yield return null;
