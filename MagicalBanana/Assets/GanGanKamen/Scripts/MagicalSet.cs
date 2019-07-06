@@ -23,6 +23,7 @@ public class MagicalSet : MonoBehaviour
             dates[i].canSelect = true;
         }
         system.CardShuffle(this);
+        SoundManager.PlaySEOneTime(GetComponent<AudioSource>(), Resources.Load<AudioClip>("SE/SE_newData" ));
     }
 
     // Update is called once per frame

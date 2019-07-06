@@ -1553,7 +1553,7 @@ PrefabInstance:
     - target: {fileID: 5495704017123879419, guid: 1be0ccc68381c7541a750e58b2357cdf,
         type: 3}
       propertyPath: nextdates.Array.size
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5495704017123879419, guid: 1be0ccc68381c7541a750e58b2357cdf,
         type: 3}
@@ -1569,7 +1569,7 @@ PrefabInstance:
         type: 3}
       propertyPath: nextdates.Array.data[1]
       value: 
-      objectReference: {fileID: 3573123771166376018}
+      objectReference: {fileID: 3573123769538280147}
     - target: {fileID: 5495704017123879419, guid: 1be0ccc68381c7541a750e58b2357cdf,
         type: 3}
       propertyPath: nextdates.Array.data[2]
@@ -1797,6 +1797,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5495704017123879419, guid: 1be0ccc68381c7541a750e58b2357cdf,
         type: 3}
+      propertyPath: nextdates.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5495704017123879419, guid: 1be0ccc68381c7541a750e58b2357cdf,
+        type: 3}
       propertyPath: name
       value: "\u6D77\u82D4"
       objectReference: {fileID: 0}
@@ -1804,7 +1809,7 @@ PrefabInstance:
         type: 3}
       propertyPath: nextdates.Array.data[0]
       value: 
-      objectReference: {fileID: 3573123771055702986}
+      objectReference: {fileID: 868287582505354329}
     - target: {fileID: 5495704017123879419, guid: 1be0ccc68381c7541a750e58b2357cdf,
         type: 3}
       propertyPath: nextdates.Array.data[1]

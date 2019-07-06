@@ -25,7 +25,8 @@ public class SystemCtrl : MonoBehaviour
     [SerializeField] private Slider acessSlider;
     [SerializeField] private Text acessText;
     public AudioSource title, play;
-    [SerializeField] private AudioSource se_count;
+    [SerializeField] private AudioSource se_count,se_count5;
+    public bool lastFive;
     // Start is called before the first frame update
     void Start()
     {
@@ -54,6 +55,8 @@ public class SystemCtrl : MonoBehaviour
         {
             gamestart = false;
             canCtrl = false;
+            se_count5.Stop();
+            lastFive = false;
             StartCoroutine(GameObject.FindGameObjectWithTag("Set").GetComponent<MagicalSet>().DataCollect());
             SoundManager.SwitchBGM(play, title, 2f);
             Invoke("GameOver", 2f);
@@ -66,7 +69,11 @@ public class SystemCtrl : MonoBehaviour
         {
             nowTime -= Time.deltaTime;
         }
-        
+        if((int)nowTime == 5&&lastFive == false)
+        {
+            lastFive = true;
+            se_count5.Play();
+        }
     }
 
     private void CountUp()
