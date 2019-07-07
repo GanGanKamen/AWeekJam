@@ -162,4 +162,9 @@ public class SystemCtrl : MonoBehaviour
         while (random == preID);
         GameObject set = Instantiate(Resources.Load<GameObject>("Sets/Set" + random.ToString()), mainCanvas.transform);
     }
+
+    public void SeeRanking()
+    {
+        naichilab.RankingLoader.Instance.SendScoreAndShowRanking(score);
+    }
 }
