@@ -57,7 +57,16 @@ public class SystemCtrl : MonoBehaviour
             canCtrl = false;
             se_count5.Stop();
             lastFive = false;
-            StartCoroutine(GameObject.FindGameObjectWithTag("Set").GetComponent<MagicalSet>().DataCollect());
+            MagicalSet nowSet;
+            if(GameObject.FindGameObjectWithTag("Set").GetComponent<MagicalSet>() != null)
+            {
+                nowSet = GameObject.FindGameObjectWithTag("Set").GetComponent<MagicalSet>();
+                if(nowSet.isCollecting == false)
+                {
+                    StartCoroutine(nowSet.DataCollect());
+                }
+            }
+            //StartCoroutine(GameObject.FindGameObjectWithTag("Set").GetComponent<MagicalSet>().DataCollect());
             SoundManager.SwitchBGM(play, title, 2f);
             Invoke("GameOver", 2f);
         }

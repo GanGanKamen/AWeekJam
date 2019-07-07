@@ -8,11 +8,13 @@ public class MagicalSet : MonoBehaviour
     public List<Date> dates;
     private SystemCtrl system;
     public int combo;
+    public bool isCollecting;
     [SerializeField] private AudioSource SE_collect0;
     // Start is called before the first frame update
     void Start()
     {
         combo = 0;
+        isCollecting = false;
         system = GameObject.FindGameObjectWithTag("System").GetComponent<SystemCtrl>();
         for(int i = 0; i < transform.childCount; i++)
         {
@@ -74,6 +76,7 @@ public class MagicalSet : MonoBehaviour
 
     public IEnumerator DataCollect()
     {
+        isCollecting = true;
         system.canCtrl = false;
         int score = 0;
         for (int i = 0; i < dates.Count; i++)
