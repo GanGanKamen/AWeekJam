@@ -100,6 +100,8 @@ public class SystemCtrl : MonoBehaviour
 
     private void GameOver()
     {
+        scoreText.gameObject.SetActive(false);
+        timer.gameObject.SetActive(false);
         if (GameObject.FindGameObjectWithTag("Set") != null)
         {
             Destroy(GameObject.FindGameObjectWithTag("Set"));
@@ -137,6 +139,8 @@ public class SystemCtrl : MonoBehaviour
 
     public void GameStart()
     {
+        scoreText.gameObject.SetActive(true);
+        timer.gameObject.SetActive(true);
         canCtrl = true;
         gamestart = true;
         int random = Random.RandomRange(1, setNum + 1);

@@ -97,8 +97,11 @@ public class MagicalSet : MonoBehaviour
         {
             system.NextSet(id);
         }
+        if(this.gameObject != null)
+        {
+            Destroy(gameObject);
+        }
         
-        Destroy(gameObject);
         yield break;
     }
 }
