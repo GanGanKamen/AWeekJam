@@ -182,7 +182,7 @@ MonoBehaviour:
   - {x: 240, y: -200, z: 0}
   - {x: 700, y: -200, z: 0}
   gamestart: 0
-  setNum: 6
+  setNum: 7
   mainCanvas: {fileID: 0}
   canCtrl: 0
   nowTime: 0
@@ -198,6 +198,8 @@ MonoBehaviour:
   title: {fileID: 7350019469897018180}
   play: {fileID: 7350019470234096965}
   se_count: {fileID: 1793522318}
+  se_count5: {fileID: 0}
+  lastFive: 0
 --- !u!1 &7350019469897018178
 GameObject:
   m_ObjectHideFlags: 0
